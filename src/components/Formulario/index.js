@@ -5,7 +5,7 @@ import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import Botao from '../Botao'
 
-const Formulario = () => {
+const Formulario = (props) => {
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
@@ -23,6 +23,7 @@ const Formulario = () => {
     const onSubmit = (evento) => {
         evento.preventDefault()
         console.log('Form enviado =>', nome, cargo, imagem, time )
+        props.aoCadastrar({nome, cargo, imagem, time})
       
     }
     return (
