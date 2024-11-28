@@ -11,15 +11,7 @@ const Formulario = (props) => {
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
     
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile', 
-        'Inovação e Gestão'
-    ]
+
     const onSubmit = (evento) => {
         evento.preventDefault()
         console.log('Form enviado =>', nome, cargo, imagem, time )
@@ -33,7 +25,7 @@ const Formulario = (props) => {
                 <CampoTexto obrigatorio={true} label="Nome" placeholder="Digite seu nome" valor={nome} aoAlterado={valor => setNome(valor)}/>
                 <CampoTexto obrigatorio={true} label="Cargo" placeholder="Digite seu cargo" valor={cargo} aoAlterado={valor => setCargo(valor)} />
                 <CampoTexto obrigatorio={true} label="Imagem" placeholder="Informe o endereço da imagem" valor={imagem}  aoAlterado={valor => setImagem(valor)} />
-                <ListaSuspensa obrigatorio={true} label="Time" itens={times} valor={time} aoAlterado={valor => setTime(valor)} />
+                <ListaSuspensa obrigatorio={true} label="Time" itens={props.times} valor={time} aoAlterado={valor => setTime(valor)} />
                 <Botao>Criar Card</Botao>
 
             </form>
